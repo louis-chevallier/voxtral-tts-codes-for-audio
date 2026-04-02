@@ -1,0 +1,30 @@
+# ── Core ──────────────────────────────────────────────────────────────────────
+torch>=2.2.0
+transformers>=4.40.0
+numpy>=1.24.0
+einops>=0.7.0
+torchaudio
+speechbrain 
+accelerate 
+torchcodec
+
+# ── Tokeniser ─────────────────────────────────────────────────────────────────
+# Mistral's tokeniser package — needed by inference.py and model.py
+mistral-common>=1.10.0
+
+# ── Weight loading ────────────────────────────────────────────────────────────
+# Required to load *.safetensors checkpoint shards (strongly recommended)
+safetensors>=0.4.0
+
+# ── Audio I/O ─────────────────────────────────────────────────────────────────
+# At least one of the two is required for reading / writing .wav files.
+soundfile>=0.12.0          # preferred (pure C, fast)
+# torchaudio>=2.2.0        # alternative; also used for resampling
+
+# ── Optional performance ───────────────────────────────────────────────────────
+# Uncomment for faster codec attention (requires a compatible CUDA toolkit):
+# flash-attn>=2.5.0
+
+# Uncomment for fused RMSNorm (Apex — NVIDIA only):
+# apex  # install from source: https://github.com/NVIDIA/apex
+
